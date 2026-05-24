@@ -1,3 +1,5 @@
+import InscriptionForm from './InscriptionForm'
+
 export default function Formations() {
   return (
     <main className="min-h-screen">
@@ -128,45 +130,7 @@ export default function Formations() {
       <section style={{backgroundColor: '#F8F8F8'}} className="py-16 px-4">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-8" style={{color: '#FF6B00'}}>Formulaire inscription</h2>
-          <div className="bg-white rounded-2xl shadow-md p-8">
-            <div className="flex flex-col gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Nom complet</label>
-                <input type="text" placeholder="Votre nom et prenom" className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Telephone WhatsApp</label>
-                <input type="tel" placeholder="Ex: 77 000 00 00" className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Age</label>
-                <input type="number" placeholder="Votre age" className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Niveau</label>
-                <select className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none">
-                  <option value="">Choisir votre niveau</option>
-                  <option>Debutant</option>
-                  <option>Intermediaire</option>
-                  <option>Avance</option>
-                  <option>Aquaphobie</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Formation choisie</label>
-                <select className="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none">
-                  <option value="">Choisir une formation</option>
-                  <option>Coaching Prive VIP</option>
-                  <option>Formation Privee</option>
-                  <option>Formation Promo</option>
-                  <option>Aquaphobie</option>
-                </select>
-              </div>
-              <a href="https://wa.me/221785015969?text=Bonjour AVAMOUSSA je souhaite inscrire" style={{backgroundColor: '#FF6B00'}} className="text-white text-center py-4 rounded-full font-bold text-lg mt-2">
-                Envoyer sur WhatsApp
-              </a>
-            </div>
-          </div>
+          <InscriptionForm />
         </div>
       </section>
 
