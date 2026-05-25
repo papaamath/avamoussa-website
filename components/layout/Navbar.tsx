@@ -23,7 +23,9 @@ export default function Navbar() {
   return (
     <nav style={{backgroundColor: 'white', boxShadow: '0 2px 10px rgba(0,0,0,0.1)'}} className="fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
-        <Link href="/" className="text-2xl font-bold" style={{color: '#FF6B00'}}>AVAMOUSSA</Link>
+        <Link href="/" className="flex items-center gap-2">
+  <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '45px', width: 'auto'}} />
+</Link>
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href="/formations" className="hover:text-orange-500 transition">Formations</Link>
           <Link href="/stages" className="hover:text-orange-500 transition">Stages</Link>
