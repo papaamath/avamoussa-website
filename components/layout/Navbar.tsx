@@ -33,6 +33,8 @@ export default function Navbar() {
           <Link href="/galerie" className="hover:text-orange-500 transition">Galerie</Link>
           <Link href="/a-propos" className="hover:text-orange-500 transition">A propos</Link>
           <Link href="/contact" className="hover:text-orange-500 transition">Contact</Link>
+          <Link href="/partenaires" className="hover:text-orange-500 transition">Partenaires</Link>
+          <Link href="/reservation" className="hover:text-orange-500 transition">Reservation</Link>
           {utilisateur ? (
             <div className="flex items-center gap-3">
               <Link href="/mon-espace" style={{backgroundColor: '#0066CC'}} className="text-white px-4 py-2 rounded-full font-medium">Mon espace</Link>
@@ -57,6 +59,8 @@ export default function Navbar() {
           <Link href="/galerie" onClick={() => setOpen(false)} className="py-2 border-b">Galerie</Link>
           <Link href="/a-propos" onClick={() => setOpen(false)} className="py-2 border-b">A propos</Link>
           <Link href="/contact" onClick={() => setOpen(false)} className="py-2 border-b">Contact</Link>
+          <Link href="/partenaires" className="hover:text-orange-500 transition">Partenaires</Link>
+          <Link href="/reservation" className="hover:text-orange-500 transition">Reservation</Link>
           {utilisateur ? (
             <Link href="/mon-espace" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">Mon espace</Link>
           ) : (
