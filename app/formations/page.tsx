@@ -41,32 +41,39 @@ export default function Formations() {
           </div>
 
           <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
-            <div style={{backgroundColor: '#0066CC'}} className="p-6 text-white">
-              <div className="text-4xl mb-3">🏊</div>
-              <h2 className="text-2xl font-bold">Stage Prive</h2>
-            </div>
-            <div className="p-6">
-              <p className="text-gray-600 mb-6">Formation en petit groupe sans publication sur les reseaux sociaux. Ideal pour les personnes discretes.</p>
-              <div className="grid grid-cols-3 gap-4 mb-6">
-                <div className="text-center bg-gray-50 rounded-xl p-3">
-                  <p className="text-xs text-gray-500 mb-1">Duree</p>
-                  <p className="font-bold text-sm" style={{color: '#FF6B00'}}>1h par seance</p>
-                </div>
-                <div className="text-center bg-gray-50 rounded-xl p-3">
-                  <p className="text-xs text-gray-500 mb-1">Eleves</p>
-                  <p className="font-bold text-sm" style={{color: '#FF6B00'}}>5 a 10 eleves</p>
-                </div>
-                <div className="text-center bg-gray-50 rounded-xl p-3">
-                  <p className="text-xs text-gray-500 mb-1">Seances</p>
-                  <p className="font-bold text-sm" style={{color: '#FF6B00'}}>6 seances</p>
-                </div>
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-2xl font-bold" style={{color: '#0066CC'}}>80 000 FCFA</span>
-                <a href="https://wa.me/221785015969" style={{backgroundColor: '#FF6B00'}} className="text-white px-6 py-3 rounded-full font-medium">Je reserve</a>
-              </div>
-            </div>
-          </div>
+  <div style={{backgroundColor: '#0066CC'}} className="p-6 text-white">
+    <div className="text-4xl mb-3">💙</div>
+    <h2 className="text-2xl font-bold">Aquaphobie</h2>
+  </div>
+  <div className="p-6">
+    <p className="text-gray-600 mb-6">Programme special pour enfants et adultes ayant peur de l eau. Methode douce et progressive.</p>
+    <div className="grid grid-cols-2 gap-4 mb-6">
+      <div className="text-center bg-gray-50 rounded-xl p-3">
+        <p className="text-xs text-gray-500 mb-1">Seances</p>
+        <p className="font-bold text-sm" style={{color: '#FF6B00'}}>6 seances</p>
+      </div>
+      <div className="text-center bg-gray-50 rounded-xl p-3">
+        <p className="text-xs text-gray-500 mb-1">Places max</p>
+        <p className="font-bold text-sm" style={{color: '#FF6B00'}}>5 eleves</p>
+      </div>
+      <div className="text-center bg-gray-50 rounded-xl p-3">
+        <p className="text-xs text-gray-500 mb-1">Niveau</p>
+        <p className="font-bold text-sm" style={{color: '#FF6B00'}}>Debutants peur eau</p>
+      </div>
+      <div className="text-center bg-gray-50 rounded-xl p-3">
+        <p className="text-xs text-gray-500 mb-1">Objectif</p>
+        <p className="font-bold text-sm" style={{color: '#FF6B00'}}>Confiance et flottaison</p>
+      </div>
+    </div>
+    <div style={{backgroundColor: '#E6F0FF'}} className="rounded-xl p-3 mb-4">
+      <p className="text-xs text-center" style={{color: '#0066CC'}}>Confiance, flottaison et deplacements de base</p>
+    </div>
+    <div className="flex items-center justify-between">
+      <span className="text-2xl font-bold" style={{color: '#0066CC'}}>50 000 FCFA</span>
+      <a href="https://wa.me/221785015969" style={{backgroundColor: '#FF6B00'}} className="text-white px-6 py-3 rounded-full font-medium">Je reserve</a>
+    </div>
+  </div>
+</div>
 
           <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
             <div style={{backgroundColor: '#FF6B00'}} className="p-6 text-white">
