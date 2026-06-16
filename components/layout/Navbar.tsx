@@ -27,14 +27,14 @@ export default function Navbar() {
   <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '45px', width: 'auto'}} />
 </Link>
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link href="/formations" className="hover:text-orange-500 transition">Formations</Link>
-          <Link href="/stages" className="hover:text-orange-500 transition">Stages</Link>
-          <Link href="/boutique" className="hover:text-orange-500 transition">Boutique</Link>
-          <Link href="/galerie" className="hover:text-orange-500 transition">Galerie</Link>
-          <Link href="/a-propos" className="hover:text-orange-500 transition">A propos</Link>
-          <Link href="/contact" className="hover:text-orange-500 transition">Contact</Link>
-          <Link href="/partenaires" className="hover:text-orange-500 transition">Partenaires</Link>
-          <Link href="/reservation" className="hover:text-orange-500 transition">Reservation</Link>
+          <Link href="/reservation" style={{backgroundColor: '#FF6B00'}} className="text-white px-5 py-2 rounded-full font-medium hover:opacity-90 transition">Reservation</Link>
+<Link href="/formations" className="hover:text-orange-500 transition">Formations</Link>
+<Link href="/stages" className="hover:text-orange-500 transition">Stages</Link>
+<Link href="/boutique" className="hover:text-orange-500 transition">Boutique</Link>
+<Link href="/galerie" className="hover:text-orange-500 transition">Galerie</Link>
+<Link href="/a-propos" className="hover:text-orange-500 transition">A propos</Link>
+<Link href="/partenaires" className="hover:text-orange-500 transition">Partenaires</Link>
+<Link href="/contact" className="hover:text-orange-500 transition">Contact</Link>
           {utilisateur ? (
             <div className="flex items-center gap-3">
               <Link href="/mon-espace" style={{backgroundColor: '#0066CC'}} className="text-white px-4 py-2 rounded-full font-medium">Mon espace</Link>
