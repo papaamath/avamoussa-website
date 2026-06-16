@@ -52,22 +52,22 @@ export default function Navbar() {
         </button>
       </div>
       {open && (
-        <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-3 text-sm font-medium border-t">
-          <Link href="/reservation" onClick={() => setOpen(false)} style={{backgroundColor: '#FF6B00'}} className="text-white text-center py-2 rounded-full font-medium">Reservation</Link>
-          <Link href="/formations" onClick={() => setOpen(false)} className="py-2 border-b">Formations</Link>
-          <Link href="/stages" onClick={() => setOpen(false)} className="py-2 border-b">Stages</Link>
-          <Link href="/boutique" onClick={() => setOpen(false)} className="py-2 border-b">Boutique</Link>
-          <Link href="/galerie" onClick={() => setOpen(false)} className="py-2 border-b">Galerie</Link>
-          <Link href="/a-propos" onClick={() => setOpen(false)} className="py-2 border-b">A propos</Link>
-          <Link href="/partenaires" onClick={() => setOpen(false)} className="py-2 border-b">Partenaires</Link>
-          <Link href="/contact" onClick={() => setOpen(false)} className="py-2 border-b">Contact</Link>
-          {utilisateur ? (
-            <Link href="/mon-espace" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">Mon espace</Link>
-          ) : (
-            <Link href="/inscription" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">S inscrire</Link>
-          )}
-        </div>
-      )}
+  <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-3 text-sm font-medium border-t">
+    <Link href="/reservation" onClick={() => setOpen(false)} style={{backgroundColor: '#FF6B00'}} className="text-white text-center py-2 rounded-full font-medium mt-2">Reservation</Link>
+    <Link href="/formations" onClick={() => setOpen(false)} className="py-2 border-b">Formations</Link>
+    <Link href="/stages" onClick={() => setOpen(false)} className="py-2 border-b">Stages</Link>
+    <Link href="/boutique" onClick={() => setOpen(false)} className="py-2 border-b">Boutique</Link>
+    <Link href="/galerie" onClick={() => setOpen(false)} className="py-2 border-b">Galerie</Link>
+    <Link href="/a-propos" onClick={() => setOpen(false)} className="py-2 border-b">A propos</Link>
+    <Link href="/partenaires" onClick={() => setOpen(false)} className="py-2 border-b">Partenaires</Link>
+    <Link href="/contact" onClick={() => setOpen(false)} className="py-2 border-b">Contact</Link>
+    {utilisateur ? (
+      <Link href="/mon-espace" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">Mon espace</Link>
+    ) : (
+      <Link href="/inscription" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">S inscrire</Link>
+    )}
+  </div>
+)}
     </nav>
   )
 }
