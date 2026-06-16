@@ -9,42 +9,30 @@ export default function APropos() {
 
       <section className="py-16 px-4 max-w-4xl mx-auto">
         <h2 className="text-3xl font-bold mb-8" style={{color: '#FF6B00'}}>Notre Histoire</h2>
-
         <div className="flex flex-col gap-6 text-gray-700 leading-relaxed text-lg">
           <p>AVAMOUSSA est nee d'une histoire vraie, d'un parcours de transformation et d'une conviction profonde : si une personne peut apprendre a nager, elle peut apprendre n'importe quoi dans sa vie.</p>
-
           <p>Depuis mon enfance, j'ai toujours aime apprendre, partager et transmettre. Durant mon parcours scolaire puis universitaire a l'UCAD, au departement Mathematiques, Physique et Informatique, je revais deja d'aider les autres a progresser.</p>
-
           <p>Pourtant, apres l'obtention de mon baccalaureat, je traversais une periode difficile. Sans meme le savoir, je vivais une forme de depression liee aux incertitudes de l'avenir. C'est a cette periode que la plage est devenue pour moi un lieu de liberte et de reconstruction.</p>
-
           <div style={{backgroundColor: '#FFF0E6', borderLeft: '4px solid #FF6B00'}} className="rounded-xl p-6">
             <p className="font-bold text-xl mb-2" style={{color: '#FF6B00'}}>En 2022, je ne savais ni flotter, ni me deplacer dans l'eau.</p>
             <p>J'ai alors commence un long travail sur moi-meme a travers des formations en developpement personnel, en prise de parole en public, en entrepreneuriat et bien sur en natation.</p>
           </div>
-
           <p>Au fil du temps, j'ai decouvert en moi un etat d'esprit que j'ai appele AVAMOUSSA : apprendre toute sa vie, se transformer et transmettre aux autres ce que l'on a appris.</p>
-
           <div style={{backgroundColor: '#E6F0FF', borderLeft: '4px solid #0066CC'}} className="rounded-xl p-6">
             <p className="font-bold text-xl mb-2" style={{color: '#0066CC'}}>Au debut de l'ete 2024</p>
             <p>Une de mes videos sur la natation est devenue virale sur les reseaux sociaux. J'ai alors realise que des milliers de personnes au Senegal ne savaient pas nager et vivaient avec la peur de l'eau.</p>
           </div>
-
           <p>J'ai compris qu'il existait un immense besoin et surtout une opportunite de creer une solution accessible a tous. C'est ainsi qu'est nee l'Ecole de Natation AVAMOUSSA.</p>
-
           <p>Nous avons commence modestement avec quelques eleves qui nous ont accorde leur confiance. Aujourd'hui, notre mission reste la meme : transformer des vies grace a la natation.</p>
-
           <div style={{backgroundColor: '#F8F8F8'}} className="rounded-2xl p-6">
             <p className="font-bold text-xl mb-3" style={{color: '#FF6B00'}}>Notre approche</p>
             <p>Nous privilegions volontairement des groupes reduits afin d'offrir un accompagnement personnalise et obtenir un maximum de resultats pour chaque eleve.</p>
           </div>
-
           <div style={{backgroundColor: '#FFF0E6'}} className="rounded-2xl p-6">
             <p className="text-xl font-bold mb-3" style={{color: '#FF6B00'}}>Chez AVAMOUSSA, nous ne formons pas seulement des nageurs.</p>
             <p>Nous aidons des personnes a vaincre leurs peurs, a developper leur confiance en elles et a decouvrir qu'elles sont capables de bien plus qu'elles ne l'imaginent.</p>
           </div>
-
           <p>Notre ambition est de rendre la natation accessible a tous les Senegalais et de former des milliers de personnes partout au Senegal.</p>
-
           <div style={{backgroundColor: '#0066CC'}} className="rounded-2xl p-6 text-white text-center">
             <p className="text-2xl font-bold mb-2">Bienvenue dans l'aventure AVAMOUSSA</p>
             <p className="mb-4">Reservez votre place pour rejoindre une communaute qui transforme ses faiblesses en forces grace a la natation.</p>
@@ -108,11 +96,11 @@ export default function APropos() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
           <div>
-            <p className="text-4xl font-bold" style={{color: '#FF6B00'}}>500+</p>
+            <p className="text-4xl font-bold" style={{color: '#FF6B00'}}>200+</p>
             <p className="text-gray-600 text-sm mt-1">Eleves formes</p>
           </div>
           <div>
-            <p className="text-4xl font-bold" style={{color: '#FF6B00'}}>2022</p>
+            <p className="text-4xl font-bold" style={{color: '#FF6B00'}}>2023</p>
             <p className="text-gray-600 text-sm mt-1">Annee de debut</p>
           </div>
           <div>

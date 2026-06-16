@@ -4,15 +4,15 @@ export default function Home() {
   return (
     <main className="min-h-screen">
 
-      <section className="relative text-white text-center py-20 px-4 min-h-screen flex flex-col items-center justify-center" style={{backgroundImage: 'url(/hero.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+      <section className="relative text-white text-center py-20 px-4 min-h-screen flex flex-col items-center justify-center" style={{backgroundImage: 'url(/hero.jpeg)', backgroundSize: 'cover', backgroundPosition: 'top center', backgroundRepeat: 'no-repeat'}}>
         <div style={{position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.55)'}}></div>
         <div style={{position: 'relative', zIndex: 1}} className="max-w-4xl mx-auto w-full">
           <div className="mb-8">
-            <input type="text" placeholder="Rechercher une formation, un stage, une ville..." className="w-full max-w-xl px-6 py-4 rounded-full text-gray-800 text-base focus:outline-none shadow-lg" />
+            <input type="text" placeholder="Rechercher une formation, un stage, une ville..." className="w-full max-w-xl px-6 py-4 rounded-full text-gray-800 text-sm sm:text-base focus:outline-none shadow-lg" />
           </div>
-          <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '120px', width: 'auto', margin: '0 auto 20px'}} />
-          <h1 className="text-5xl font-bold mb-4">AVAMOUSSA x Malcolm</h1>
-          <p className="text-lg mb-8 max-w-3xl mx-auto leading-relaxed">Apres le stage international France et Senegal, AVAMOUSSA lance des stages de natation de 6 jours a Dakar, Saly, Mbour, Thies et Saint-Louis</p>
+          <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '80px', width: 'auto', margin: '0 auto 16px'}} />
+          <h1 className="text-3xl sm:text-5xl font-bold mb-4">AVAMOUSSA x Malcolm</h1>
+          <p className="text-sm sm:text-lg mb-8 max-w-3xl mx-auto leading-relaxed px-2">Apres le stage international France et Senegal, AVAMOUSSA lance des stages de natation de 6 jours a Dakar, Saly, Mbour, Thies et Saint-Louis pour former les debutants sur la nage du crawl avec la Methode AVAMOUSSA Elite x Malcolm</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href="/reservation" style={{backgroundColor: '#FF6B00'}} className="text-white font-bold px-8 py-3 rounded-full text-lg">Reserver maintenant</a>
             <a href="https://wa.me/221785015969" style={{backgroundColor: '#25D366'}} className="text-white font-bold px-8 py-3 rounded-full text-lg">WhatsApp direct</a>
@@ -98,9 +98,7 @@ export default function Home() {
         <p className="text-center text-gray-600 mb-10">Avant et apres — nos eleves qui ont transforme leur vie</p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
           {['🏊', '💪', '🎯', '🏆', '🌊', '⭐', '🥇', '🎉'].map((emoji, i) => (
-            <a key={i} href="/galerie" style={{backgroundColor: '#E6F0FF'}} className="rounded-2xl h-40 flex items-center justify-center text-6xl hover:opacity-80 transition">
-              {emoji}
-            </a>
+            <a key={i} href="/galerie" style={{backgroundColor: '#E6F0FF'}} className="rounded-2xl h-40 flex items-center justify-center text-6xl hover:opacity-80 transition">{emoji}</a>
           ))}
         </div>
         <div className="text-center mt-8">
@@ -128,11 +126,11 @@ export default function Home() {
       <section style={{backgroundColor: '#0066CC'}} className="py-16 px-4 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-6">A propos de AVAMOUSSA</h2>
-          <p className="text-lg leading-relaxed mb-8">AVAMOUSSA est la premiere ecole de natation professionnelle au Senegal. Notre mission est de former des nageurs confiants et de sauver des vies grace a la natation.</p>
+          <p className="text-lg leading-relaxed mb-8">AVAMOUSSA est la premiere ecole de natation professionnelle au Senegal. Depuis 2023, notre mission est de former des nageurs confiants et de sauver des vies grace a la natation.</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             {[
-              { chiffre: '500+', label: 'Eleves formes' },
-              { chiffre: '5+', label: 'Annees experience' },
+              { chiffre: '200+', label: 'Eleves formes' },
+              { chiffre: '2023', label: 'Annee de debut' },
               { chiffre: '5', label: 'Villes au Senegal' },
               { chiffre: '2', label: 'Pays couverts' },
             ].map((s) => (
