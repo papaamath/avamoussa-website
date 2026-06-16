@@ -24,9 +24,9 @@ export default function Navbar() {
     <nav style={{backgroundColor: 'white', boxShadow: '0 2px 10px rgba(0,0,0,0.1)'}} className="fixed top-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="flex items-center gap-2">
-  <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '45px', width: 'auto'}} />
-</Link>
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '45px', width: 'auto'}} />
+        </Link>
+        <div className="hidden md:flex items-center gap-4 text-sm font-medium">
           <Link href="/reservation" style={{backgroundColor: '#FF6B00'}} className="text-white px-5 py-2 rounded-full font-medium hover:opacity-90 transition">Reservation</Link>
           <Link href="/formations" className="hover:text-orange-500 transition">Formations</Link>
           <Link href="/stages" className="hover:text-orange-500 transition">Stages</Link>
@@ -36,14 +36,14 @@ export default function Navbar() {
           <Link href="/partenaires" className="hover:text-orange-500 transition">Partenaires</Link>
           <Link href="/contact" className="hover:text-orange-500 transition">Contact</Link>
           {utilisateur ? (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <Link href="/mon-espace" style={{backgroundColor: '#0066CC'}} className="text-white px-4 py-2 rounded-full font-medium">Mon espace</Link>
               <button onClick={handleDeconnexion} style={{border: '1px solid #FF6B00', color: '#FF6B00'}} className="px-4 py-2 rounded-full font-medium">Deconnexion</button>
             </div>
           ) : (
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               <Link href="/connexion" style={{border: '1px solid #FF6B00', color: '#FF6B00'}} className="px-4 py-2 rounded-full font-medium">Connexion</Link>
-              <Link href="/inscription" style={{backgroundColor: '#FF6B00'}} className="text-white px-4 py-2 rounded-full font-medium">S inscrire</Link>
+              <Link href="/inscription" style={{backgroundColor: '#0066CC'}} className="text-white px-4 py-2 rounded-full font-medium">S inscrire</Link>
             </div>
           )}
         </div>
@@ -53,18 +53,18 @@ export default function Navbar() {
       </div>
       {open && (
         <div className="md:hidden bg-white px-4 pb-4 flex flex-col gap-3 text-sm font-medium border-t">
+          <Link href="/reservation" onClick={() => setOpen(false)} style={{backgroundColor: '#FF6B00'}} className="text-white text-center py-2 rounded-full font-medium">Reservation</Link>
           <Link href="/formations" onClick={() => setOpen(false)} className="py-2 border-b">Formations</Link>
           <Link href="/stages" onClick={() => setOpen(false)} className="py-2 border-b">Stages</Link>
           <Link href="/boutique" onClick={() => setOpen(false)} className="py-2 border-b">Boutique</Link>
           <Link href="/galerie" onClick={() => setOpen(false)} className="py-2 border-b">Galerie</Link>
           <Link href="/a-propos" onClick={() => setOpen(false)} className="py-2 border-b">A propos</Link>
+          <Link href="/partenaires" onClick={() => setOpen(false)} className="py-2 border-b">Partenaires</Link>
           <Link href="/contact" onClick={() => setOpen(false)} className="py-2 border-b">Contact</Link>
-          <Link href="/partenaires" className="hover:text-orange-500 transition">Partenaires</Link>
-          <Link href="/reservation" className="hover:text-orange-500 transition">Reservation</Link>
           {utilisateur ? (
             <Link href="/mon-espace" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">Mon espace</Link>
           ) : (
-            <Link href="/inscription" onClick={() => setOpen(false)} style={{backgroundColor: '#FF6B00'}} className="text-white text-center py-2 rounded-full font-medium">S inscrire</Link>
+            <Link href="/inscription" onClick={() => setOpen(false)} style={{backgroundColor: '#0066CC'}} className="text-white text-center py-2 rounded-full font-medium">S inscrire</Link>
           )}
         </div>
       )}
