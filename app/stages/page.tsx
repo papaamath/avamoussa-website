@@ -54,7 +54,7 @@ export default function Stages() {
     { titre: 'Coaching Prive VIP', emoji: '⭐', desc: 'Coaching personnalise a domicile ou a la piscine. Suivi individuel avec la Methode AVAMOUSSA Elite x Malcolm.', prix: '200 000 FCFA', seances: '6 seances de 1h30', places: 1 },
     { titre: 'Stage Prive', emoji: '🏊', desc: 'Formation en petit groupe sans publication sur les reseaux sociaux. Ideal pour rester discret.', prix: '80 000 FCFA', seances: '6 seances', places: 10 },
     { titre: 'Stage Promo', emoji: '🎯', desc: 'Formation en groupe avec publication des videos sur TikTok et Instagram AVAMOUSSA. Rejoins la communaute.', prix: '60 000 FCFA', seances: '6 seances', places: 20 },
-    { titre: 'Aquaphobie', emoji: '💙', desc: 'Programme special pour enfants et adultes ayant peur de l eau. Methode douce, progressive et bienveillante.', prix: 'Sur devis', seances: 'Selon niveau', places: 5 },
+    { titre: 'Aquaphobie', emoji: '💙', desc: 'Programme special pour enfants et adultes ayant peur de l eau. Methode douce, progressive et bienveillante.', prix: '50 000 FCFA', seances: '6 seances', places: 5 },
   ]
 
   return (
