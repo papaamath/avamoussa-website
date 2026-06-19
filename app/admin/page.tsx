@@ -87,6 +87,7 @@ export default function Admin() {
         <Link href="/admin/stages" style={{color: '#666'}} className="px-4 py-2 rounded-full text-sm font-medium">🏊 Stages</Link>
         <Link href="/admin/boutique" style={{color: '#666'}} className="px-4 py-2 rounded-full text-sm font-medium">🛍️ Boutique</Link>
         <Link href="/admin/temoignages" style={{color: '#666'}} className="px-4 py-2 rounded-full text-sm font-medium">💬 Temoignages</Link>
+        <Link href="/admin/promos" style={{color: '#666'}} className="px-4 py-2 rounded-full text-sm font-medium">🎟️ Promos</Link>
       </div>
 
       <div className="p-6 max-w-7xl mx-auto">

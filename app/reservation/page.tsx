@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { db } from '@/lib/firebase'
-import { collection, getDocs, addDoc } from 'firebase/firestore'
+import { collection, getDocs, addDoc, query, where } from 'firebase/firestore'
 
 export default function Reservation() {
   const [groupes, setGroupes] = useState<any[]>([])
@@ -9,6 +9,10 @@ export default function Reservation() {
   const [groupeSelectionne, setGroupeSelectionne] = useState<any>(null)
   const [confirme, setConfirme] = useState(false)
   const [envoi, setEnvoi] = useState(false)
+  const [codePromo, setCodePromo] = useState('')
+  const [promoApplique, setPromoApplique] = useState<any>(null)
+  const [erreurPromo, setErreurPromo] = useState('')
+  const [verifPromo, setVerifPromo] = useState(false)
   const [form, setForm] = useState({
     nom: '', telephone: '', age: '', ville: '', niveau: '', formation: ''
   })
@@ -23,6 +27,35 @@ export default function Reservation() {
     charger()
   }, [])
 
+  const verifierPromo = async () => {
+    if (!codePromo) return
+    setVerifPromo(true)
+    setErreurPromo('')
+    try {
+      const snapshot = await getDocs(collection(db, 'promos'))
+      const promo = snapshot.docs.map(d => ({ id: d.id, ...d.data() })).find((p: any) => p.code === codePromo.toUpperCase() && p.actif)
+      if (promo) {
+        setPromoApplique(promo)
+      } else {
+        setErreurPromo('Code promo invalide ou expire')
+        setPromoApplique(null)
+      }
+    } catch (error) {
+      setErreurPromo('Erreur lors de la verification')
+    }
+    setVerifPromo(false)
+  }
+
+  const calculerPrixFinal = () => {
+    if (!groupeSelectionne) return 0
+    const prixBase = Number(groupeSelectionne.prix)
+    if (!promoApplique) return prixBase
+    if (promoApplique.type === 'pourcentage') {
+      return Math.round(prixBase - (prixBase * promoApplique.reduction / 100))
+    }
+    return Math.max(0, prixBase - Number(promoApplique.reduction))
+  }
+
   const handleReserver = async () => {
     if (!form.nom || !form.telephone || !form.age) {
       alert('Veuillez remplir tous les champs')
@@ -30,16 +63,20 @@ export default function Reservation() {
     }
     setEnvoi(true)
     try {
+      const prixFinal = calculerPrixFinal()
       await addDoc(collection(db, 'reservations'), {
         ...form,
         groupe: groupeSelectionne.nom,
         ville: groupeSelectionne.ville,
         prix: groupeSelectionne.prix,
+        prixFinal: prixFinal,
+        codePromo: promoApplique ? promoApplique.code : null,
         statut: 'En attente',
         date: new Date().toISOString()
       })
       setConfirme(true)
-      const message = `Bonjour AVAMOUSSA ! Nouvelle reservation :\nNom: ${form.nom}\nTel: ${form.telephone}\nAge: ${form.age}\nNiveau: ${form.niveau}\nGroupe: ${groupeSelectionne.nom}\nVille: ${groupeSelectionne.ville}\nPrix: ${Number(groupeSelectionne.prix).toLocaleString()} FCFA`
+      const messagePromo = promoApplique ? `\nCode promo: ${promoApplique.code}\nPrix final: ${prixFinal.toLocaleString()} FCFA` : ''
+      const message = `Bonjour AVAMOUSSA ! Nouvelle reservation :\nNom: ${form.nom}\nTel: ${form.telephone}\nAge: ${form.age}\nNiveau: ${form.niveau}\nGroupe: ${groupeSelectionne.nom}\nVille: ${groupeSelectionne.ville}\nPrix: ${Number(groupeSelectionne.prix).toLocaleString()} FCFA${messagePromo}`
       window.open(`https://wa.me/221785015969?text=${encodeURIComponent(message)}`, '_blank')
     } catch (error) {
       alert('Erreur lors de la reservation. Reessayez.')
@@ -48,6 +85,7 @@ export default function Reservation() {
   }
 
   if (confirme) {
+    const prixFinal = calculerPrixFinal()
     return (
       <main className="min-h-screen flex items-center justify-center px-4" style={{backgroundColor: '#F8F8F8'}}>
         <div className="bg-white rounded-2xl shadow-md p-8 max-w-md w-full text-center">
@@ -61,10 +99,13 @@ export default function Reservation() {
             <p className="text-sm text-gray-600">Telephone : {form.telephone}</p>
             <p className="text-sm text-gray-600">Groupe : {groupeSelectionne.nom}</p>
             <p className="text-sm text-gray-600">Ville : {groupeSelectionne.ville}</p>
-            <p className="text-sm font-bold" style={{color: '#FF6B00'}}>Prix : {Number(groupeSelectionne.prix).toLocaleString()} FCFA</p>
+            {promoApplique && (
+              <p className="text-sm text-gray-600">Code promo : <span className="font-bold" style={{color: '#2E7D32'}}>{promoApplique.code}</span></p>
+            )}
+            <p className="text-sm font-bold mt-2" style={{color: '#FF6B00'}}>Prix final : {prixFinal.toLocaleString()} FCFA</p>
           </div>
           <a href="https://wa.me/221785015969" style={{backgroundColor: '#25D366'}} className="text-white px-8 py-3 rounded-full font-bold block mb-3">Contacter AVAMOUSSA</a>
-          <button onClick={() => { setConfirme(false); setGroupeSelectionne(null); setForm({ nom: '', telephone: '', age: '', ville: '', niveau: '', formation: '' }) }} style={{backgroundColor: '#F8F8F8', color: '#666'}} className="px-8 py-3 rounded-full font-medium block w-full">Nouvelle reservation</button>
+          <button onClick={() => { setConfirme(false); setGroupeSelectionne(null); setForm({ nom: '', telephone: '', age: '', ville: '', niveau: '', formation: '' }); setCodePromo(''); setPromoApplique(null) }} style={{backgroundColor: '#F8F8F8', color: '#666'}} className="px-8 py-3 rounded-full font-medium block w-full">Nouvelle reservation</button>
         </div>
       </main>
     )
@@ -154,7 +195,7 @@ export default function Reservation() {
               <p className="font-bold" style={{color: '#FF6B00'}}>{groupeSelectionne.nom}</p>
               <p className="text-sm text-gray-600">📍 {groupeSelectionne.ville} — {Number(groupeSelectionne.prix).toLocaleString()} FCFA</p>
             </div>
-            <button onClick={() => setGroupeSelectionne(null)} style={{color: '#FF6B00'}} className="text-sm font-medium">Changer</button>
+            <button onClick={() => { setGroupeSelectionne(null); setCodePromo(''); setPromoApplique(null) }} style={{color: '#FF6B00'}} className="text-sm font-medium">Changer</button>
           </div>
 
           <div className="bg-white rounded-2xl shadow-md p-8">
@@ -192,6 +233,37 @@ export default function Reservation() {
                   <option>Aquaphobie</option>
                 </select>
               </div>
+
+              <div style={{backgroundColor: '#F8F8F8'}} className="rounded-xl p-4">
+                <label className="block text-sm font-medium text-gray-700 mb-2">Code promo (optionnel)</label>
+                <div className="flex gap-2">
+                  <input type="text" placeholder="Ex: AVAMOUSSA10" value={codePromo} onChange={(e) => setCodePromo(e.target.value)} className="flex-1 border border-gray-200 rounded-xl px-4 py-3 focus:outline-none uppercase" />
+                  <button onClick={verifierPromo} disabled={verifPromo} style={{backgroundColor: '#0066CC'}} className="text-white px-5 py-3 rounded-xl font-medium">
+                    {verifPromo ? '...' : 'Appliquer'}
+                  </button>
+                </div>
+                {erreurPromo && <p className="text-sm mt-2" style={{color: '#CC0000'}}>{erreurPromo}</p>}
+                {promoApplique && (
+                  <div style={{backgroundColor: '#E6F4EA'}} className="rounded-xl p-3 mt-2">
+                    <p className="text-sm font-bold" style={{color: '#2E7D32'}}>Code {promoApplique.code} applique !</p>
+                    <p className="text-xs text-gray-600">{promoApplique.description}</p>
+                  </div>
+                )}
+              </div>
+
+              <div style={{backgroundColor: '#FFF0E6'}} className="rounded-xl p-4">
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-600">Prix de base</span>
+                  <span className={promoApplique ? 'line-through text-gray-400' : 'font-bold'} style={{color: promoApplique ? undefined : '#FF6B00'}}>{Number(groupeSelectionne.prix).toLocaleString()} FCFA</span>
+                </div>
+                {promoApplique && (
+                  <div className="flex justify-between items-center mt-2">
+                    <span className="font-bold text-lg">Prix final</span>
+                    <span className="font-bold text-2xl" style={{color: '#FF6B00'}}>{calculerPrixFinal().toLocaleString()} FCFA</span>
+                  </div>
+                )}
+              </div>
+
               <button onClick={handleReserver} disabled={envoi} style={{backgroundColor: '#FF6B00'}} className="text-white py-4 rounded-full font-bold text-lg mt-2">
                 {envoi ? 'Envoi en cours...' : 'Confirmer ma reservation'}
               </button>
