@@ -37,17 +37,17 @@ export default function Stages() {
       strategie: 'Jour 1-2 : adaptation eau / Jour 3-4 : technique crawl / Jour 5-6 : perfectionement',
     },
     {
-      ville: 'Saint-Louis',
-      emoji: '🎯',
-      lieu: 'Piscine de Saint-Louis',
-      prix: '45 000 FCFA',
-      horaires: 'Lundi au Samedi — 7h a 9h',
-      seances: '6 seances sur 6 jours',
-      places: 12,
-      reservees: 9,
-      couleur: '#FF6B00',
-      strategie: 'Jour 1-2 : adaptation eau / Jour 3-4 : technique crawl / Jour 5-6 : perfectionement',
-    },
+  ville: 'Saint-Louis',
+  emoji: '🎯',
+  lieu: 'Piscine partenaire AVAMOUSSA',
+  prix: '60 000 FCFA',
+  horaires: 'Lundi au Samedi 7h a 9h',
+  seances: '6 seances sur 6 jours',
+  places: 12,
+  reservees: 0,
+  couleur: '#0066CC',
+  strategie: 'Jour 1: Theorie et objectifs / Jour 2: Adaptation eau et flottaison / Jour 3: Respiration et deplacements / Jour 4: Technique crawl / Jour 5: Perfectionnement / Jour 6: Validation des acquis',
+},
   ]
 
     const formations = [
