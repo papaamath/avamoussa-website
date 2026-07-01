@@ -29,8 +29,8 @@ export default function Home() {
       </section>
 
       <section className="py-16 px-4 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#FF6B00'}}>Stages disponibles</h2>
-        <p className="text-center text-gray-600 mb-10">6 jours de formation intensive avec la Methode AVAMOUSSA Elite x Malcolm</p>
+      <h2 className="text-3xl font-bold text-center mb-4" style={{color: '#FF6B00'}}>STAGES AVAMOUSSA — JUILLET 2026</h2>
+<p className="text-center text-gray-600 mb-10">6 jours de transformation avec la Methode AVAMOUSSA Elite x Malcolm</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             { ville: 'Dakar', emoji: '🌊', places: 8, statut: 'Disponible' },
