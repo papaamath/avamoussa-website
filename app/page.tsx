@@ -11,8 +11,9 @@ export default function Home() {
             <input type="text" placeholder="Rechercher une formation, un stage, une ville..." className="w-full max-w-xl px-6 py-4 rounded-full text-gray-800 text-sm sm:text-base focus:outline-none shadow-lg" />
           </div>
           <img src="/ava.jpeg" alt="AVAMOUSSA" style={{height: '80px', width: 'auto', margin: '0 auto 16px'}} />
-          <h1 className="text-3xl sm:text-5xl font-bold mb-4">AVAMOUSSA x Malcolm</h1>
-          <p className="text-sm sm:text-lg mb-8 max-w-3xl mx-auto leading-relaxed px-2">Apres le stage international France et Senegal, AVAMOUSSA lance des stages de natation de 6 jours a Dakar, Saly, Mbour, Thies et Saint-Louis pour former les debutants sur la nage du crawl avec la Methode AVAMOUSSA Elite x Malcolm</p>
+          <h1 className="text-3xl sm:text-5xl font-bold mb-2">STAGES AVAMOUSSA 2026</h1>
+<p className="text-lg sm:text-xl mb-2" style={{opacity: 0.9}}>Methode AVAMOUSSA Elite x Malcolm</p>
+<p className="text-sm sm:text-lg mb-8 max-w-3xl mx-auto leading-relaxed px-2">Apres le stage international France et Senegal, AVAMOUSSA lance des stages de natation de 6 jours a Dakar, Saly, Mbour, Thies et Saint-Louis pour former les debutants sur la nage du crawl.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href="/reservation" style={{backgroundColor: '#FF6B00'}} className="text-white font-bold px-8 py-3 rounded-full text-lg">Reserver maintenant</a>
             <a href="https://wa.me/221785015969" style={{backgroundColor: '#25D366'}} className="text-white font-bold px-8 py-3 rounded-full text-lg">WhatsApp direct</a>
